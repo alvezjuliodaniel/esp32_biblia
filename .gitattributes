@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+# Binarios: no convertir finales de línea ni mostrar diffs de texto
+*.dat binary
+*.png binary
+*.bin binary

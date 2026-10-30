@@ -1,0 +1,27 @@
+# El texto de entrada no se distribuye (ver "Aviso" en el README): cada
+# persona coloca su propio RVR1960_vid_149.json en la raíz del proyecto.
+RVR1960_vid_149.json
+RVR1960*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# arduino-cli / compilación
+build/
+*.bin
+*.elf
+*.hex
+*.map
+
+# Herramientas y sistema
+.DS_Store
+*.log
+*.swp
+*~
+.idea/
+.vscode/

@@ -1,0 +1,2 @@
+# Dependencias del host (la interfaz gráfica usa tkinter, que viene con Python).
+pyserial>=3.5

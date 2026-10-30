@@ -1,0 +1,9 @@
+# Tabla de particiones para placas ESP32 con 4 MB de flash.
+# Reserva 1.81 MB para el programa y 2.06 MB para LittleFS, espacio suficiente
+# para data/bible.dat (1.66 MB).
+# Name,   Type, SubType, Offset,   Size,     Flags
+nvs,      data, nvs,     0x9000,   0x4000,
+otadata,  data, ota,     0xd000,   0x2000,
+app0,     app,  ota_0,   0x10000,  0x1D0000,
+spiffs,   data, spiffs,  0x1E0000, 0x210000,
+coredump, data, coredump,0x3F0000, 0x10000,
