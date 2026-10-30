@@ -26,15 +26,14 @@ RVR1960_vid_149.json --(build_bible.py)--> data/bible.dat --(serie)--> ESP32
 ## Inicio rápido
 
 ```bash
-git clone https://github.com/TU-USUARIO/esp32_biblia.git
-cd esp32_biblia
 pip install -r requirements.txt       # solo pyserial
-# coloca tu RVR1960_vid_149.json en la raíz (ver «Aviso» al final)
-make data                             # genera data/bible.dat
 make flash  PORT=/dev/ttyACM0         # graba el firmware
-make upload PORT=/dev/ttyACM0         # carga los datos (6-10 min a 115200)
+make upload PORT=/dev/ttyACM0         # carga data/bible.dat (6-10 min a 115200)
 make gui    PORT=/dev/ttyACM0         # lee en la interfaz gráfica
 ```
+
+Si prefieres partir del JSON y no del `bible.dat` incluido, coloca
+`RVR1960_vid_149.json` en la raíz y ejecuta antes `make data`.
 
 Los mismos pasos a mano, y todos los detalles, están en las secciones siguientes.
 
@@ -306,7 +305,9 @@ editores (ver el aviso anterior).
 2. Crea una rama, mantén el estilo del código (comentarios y textos de interfaz
    en español, sin tildes en los identificadores) y prueba con
    `make test` y el simulador: `make sim`.
-3. Envía el *pull request* explicando qué cambia y cómo lo probaste.
+3. Envía el *pull request* explicando qué cambia y cómo lo probaste. La
+   integración continua (`.github/workflows/ci.yml`) comprueba la sintaxis y
+   valida `data/bible.dat` con el simulador en Python 3.8 y 3.12, sin hardware.
 
 Si modificas el formato binario, sube `FORMAT_VERSION` en
 `tools/build_bible.py` y `kFormatVersion` en `bible_store.cpp`, y documenta el
